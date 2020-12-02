@@ -1,0 +1,330 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- Game Title: edit this -->
+    <title>Undum</title>
+    <!-- End of Game Title -->
+
+    <!-- Remove this if you don't use the Tangerine font in your
+         stylesheet -->
+    <audio id="myAudio">
+      <source src="media/dice.wav" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- This is your game's stylesheet, modify it if you like. -->
+    <link media="screen"
+          rel="stylesheet" href="media/css/undum.css">
+          >
+    <link media="screen"
+          rel="stylesheet" href="media/css/dice.css">
+          >
+
+    <!-- Suppport for mobile devices. -->
+    <meta name="viewport" content="user-scalable=no, width=device-width">
+    <link rel="apple-touch-icon" href="media/img/iphone/icon.png">
+    <link rel="apple-touch-startup-image" href="media/img/iphone/splash.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--[if !IE]>-->
+    <link media="only screen and (max-width: 640px)"
+          rel="stylesheet" type="text/css" href="media/css/undum-mobile.css">
+          >
+    <link media="only screen and (max-width: 640px)"
+          rel="stylesheet" href="media/css/dice.css">
+          >
+    <!--<![endif]-->
+
+  </head>
+  <body>
+    <!-- This isn't needed and isn't visible in desktop versions,
+         because we can display the character information and the
+         tools onscreen all the time. -->
+    <div id="toolbar">
+      <!-- Set this to be a small version of the title, for the
+           toolbar on mobile devices. -->
+      <h1>Undum</h1>
+      <div class="nav">
+        <a href="#" class="button" id="menu-button">Menu</a>
+      </div>
+    </div>
+    <ul id="menu">
+      <li><a href="#title, #content_wrapper">Récit</a></li>
+      <li><a href="#character_panel"><b>Majaïn</b></a></li>
+      <li><a href="#info_panel">Info</a></li>
+    </ul>
+
+    <div id="page">
+
+      <div id="tools_wrapper">
+        <div id="info_panel" class="tools left">
+
+          <!-- Game Background: edit this -->
+          <h1>option</h1>
+          <p>
+            Vous trouverez ici des informations complémentaires sur le monde d'Aeterna qui vous permettront d'approfondir votre connaissance de ce monde
+          </p>
+          <div class='buttons' id="rules_game_info">
+            <button id="worldmap">Voir la carte du monde</button>
+            <button id="culture">À venir</button>
+            <button id="rules">Règles</button>
+          </div>
+          <!-- End of Game Background -->
+
+          <div class='buttons' id="save/load">
+            <h1>Sauvegarde et chargement de partie</h1>
+            <button id="save">Sauvegarde</button>
+            <button id="erase">Éffacer dernière sauvegarde</button>
+          </div>
+
+          <div id="dice_display">
+            <h1>Lancés de dés</h1>
+            <hr>
+            <button type="button" id="roll-button">Roll Dice</button>
+            <div class="dice">
+              <div class="grid-container" id="dice_container">
+                <div class="item1">
+                  <h5>Attribut</h5>
+                </div>
+                <div class="item2">
+                  <h5>Talent</h5>
+                </div>
+                <div class="item3">
+                  <h5>Chance/Savoir</h5>
+                </div>
+                <div class="item4">
+                  <div class="die-list even-roll" data-roll="1" id="die-1">
+                    <li class="die-item" data-side="1">
+                      <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="2">
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="3">
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="4">
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="5">
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="6">
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </li>
+                  </div>
+                </div>
+                <div class="item5">
+                  <div class="die-list odd-roll" data-roll="1" id="die-2">
+                    <li class="die-item" data-side="1">
+                      <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="2">
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="3">
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="4">
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="5">
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="6">
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </li>
+                  </div>
+                </div>
+                <div class="item6">
+                  <div class="die-list odd-roll" data-roll="1" id="die-3">
+                    <li class="die-item" data-side="1">
+                      <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="2">
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="3">
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="4">
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="5">
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="6">
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="character_panel" class="tools right">
+         <button class="equipment" id="list_equip"></button>
+          <h1 id="nom_hero"></h1>
+          <div id="character">
+            <div id="character_text">
+              <div id="character_text_content"></div>
+            </div>
+            <div id="qualities"></div>
+          </div>
+        </div>
+      </div> <!-- End of div.tools_wrapper -->
+
+      <div id="mid_panel">
+        <div id="title">
+          <div class="label">
+
+            <!-- Game Title: edit this -->
+            <h1>Les contes d'Aeterna <span class='fancy'></span><br><br>
+              L'assaut du fort Kepir</h1>
+              <h2>Une histoire fantastique interactive</h2>
+            <h3>Par Simon Viel</h3>
+            <!-- End of Game Title -->
+
+            <noscript><p class="noscript_message">This game requires
+              Javascript.</p></noscript>
+            <p class="click_message">cliquez pour commencer</p>
+          </div>
+        </div>
+
+        <div id="content_wrapper"><div id="content">
+          </div>
+          <a name="end_of_content"></a>
+        </div>
+
+      </div>
+    </div> <!-- End of div.page -->
+
+    <!-- Holds UI elements that will be cloned and placed in the main
+         page. This block itself is always hidden. -->
+    <div id="ui_library">
+      <div id="quality" class="quality">
+        <span class="name" data-attr="name"></span>
+        <span class="value" data-attr="value"></span>
+      </div>
+
+      <div id="quality_group" class="quality_group">
+        <h2 data-attr="title"></h2>
+        <div class="qualities_in_group">
+        </div>
+      </div>
+
+      <div id="progress_bar" class="progress_bar">
+        <span class="name" data-attr="name"></span>
+        <span class="value" data-attr="value"></span>
+        <div class="progress_bar_track">
+          <div class="progress_bar_color" data-attr="width">
+          </div>
+        </div>
+        <span class="left_label" data-attr="left_label"></span>
+        <span class="right_label" data-attr="right_label"></span>
+      </div>
+
+      <hr id="turn_separator">
+    </div>
+
+    <!-- The following code creates the div for the modals on the page -->
+    <div id="modal_worldmap" class="modal">
+            <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Le monde d'Aeterna; Par Alfred Gredian</h2>
+          <button id="worldmap_region">Carte géographique du monde</button>
+          <button id="worldmap_political">Carte politique du monde</button>
+          <button id="worldmap_region_north">Région d'Edniir; Nord-Est d'Aeterna</button>
+        </div>
+        <div class="modal-body">
+          <p>Cette carte représente le monde connu d'Aeterna. </p>
+          <img id="worldmap_img" src="media/img/worldmap_region.png" style='height: 100%; width: 100%; object-fit: contain'>
+        </div>
+        <div class="modal-footer">
+          <h3></h3>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal_rules" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Règles du jeu</h2>
+          <button id="btn_combat">Règles en combat</button>
+          <button id="btn_skills">Utilisation des compétences</button>
+          <button id="btn_equip">Équipement</button>
+          <button id="btn_misc">Autres</button>
+        </div>
+        <div class="modal-body">
+          <p id="para_rules">Cette fenêtre explique les règles utilisées pour mener les combats,
+            les défis de compétence et tous autres règles nécessaires au jeu.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <h3></h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Load the libraries we depend on -->
+    <script type="text/javascript" src="media/js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="media/js/undum.js"></script>
+
+    <!-- Change the name of this file. It is your main game file. -->
+    <script type="text/javascript" src="utilities.js"></script>
+    <script type="text/javascript" src="items.js"></script>
+    <script type="text/javascript" src="NPCs.js"></script>
+    <script type="text/javascript" src="chapitre_1.js"></script>
+  </body>
+</html>
